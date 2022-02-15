@@ -40,6 +40,7 @@ def datastructure():
 
     print(a[::-1])
     print(a[::2])
+    print(a[100:523:-2])
     
     print(list(range(5,10)))
 
@@ -69,6 +70,9 @@ def datastructure():
 
     print(set([1,2,3]).intersection([3,4,5]))
 
+    bigset = set()
+    #1 in bigset
+
     import collections
     from collections import Counter
 
@@ -96,6 +100,21 @@ def listcomprehensions():
     b = [x for x in a if x[0]=='C']
     b = [x for x in a if x.startswith("C")]
     print(b)
+
+    a = [1,2,3,4,5]
+    b = [10,20,30,40]
+
+    values = []
+    for ai in a:
+        for bi in b:
+            values.append(f'{ai*bi}')
+    print(values)
+
+    c = [f'{ai*bi}' for ai in a for bi in b]
+    c = {f'{ai*bi}' for ai in a for bi in b} # Set comp
+    c = { f'{ai}*{bi}':f'{ai*bi}' for ai in a for bi in b} # dict comp
+    print(c)
+
 
 if __name__ == '__main__':
     # something
