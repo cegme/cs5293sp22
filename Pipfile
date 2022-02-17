@@ -5,8 +5,11 @@ name = "pypi"
 
 [packages]
 black = "*"
+pytest = "*"
+tweetcounter = {path = "."}
 
 [dev-packages]
+ipython = "*"
 
 [requires]
 python_version = "3.10"
