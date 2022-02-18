@@ -1,5 +1,8 @@
 import argparse
 
+import tweets
+from tweets import Tweet
+
 
 def main(term):
     """Main function to start the program."""
@@ -16,7 +19,30 @@ def counttweets(filename):
 
 
 def searchterms(filename, terms=None):
-    """Search the file for a list of terms."""
+    """
+    Search the file for a list of terms.
+
+    Parameters
+    ----------
+    filename : str
+        The file name that points to a json file containing tweets.
+
+    terms : list
+        A list of strings containing search terms
+
+    Returns
+    -------
+    tweets
+        A list of tweet objects that have text that matches the terms
+
+    TODO
+    ----
+    - Only searches the first listed term
+    """
+    # Make terms a list if it is not
+    if type(terms) != list:
+        terms = [terms]
+
     tweets = []
     with open(filename) as file:
         for line in file:
